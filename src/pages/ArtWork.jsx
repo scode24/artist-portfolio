@@ -8,14 +8,14 @@ import useArtworkStore from "../stores/ArtworkStore";
 import { useFilterMenuStore } from "../stores/MenuStore";
 
 const ArtWork = () => {
-  const { artData, addArtwork } = useArtworkStore();
+  const { data, addArtwork } = useArtworkStore();
   const { filterMenu, updateFilterMenu } = useFilterMenuStore();
 
   const navigate = useNavigate();
 
   useEffect(() => {
     const fetchArtworkData = async () => {
-      if (artData !== undefined && artData.length > 0) return;
+      if (data !== undefined && data.length > 0) return;
 
       const response = await axios(
         import.meta.env.VITE_API_ENDPOINT + "/getArtWorks"

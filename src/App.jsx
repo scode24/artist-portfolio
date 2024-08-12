@@ -13,7 +13,7 @@ import NotFound from "./pages/NotFound";
 
 function App() {
   return (
-    <div className="font-style text-sm md:text-md">
+    <div className="font-style text-sm md:text-[1rem]">
       <Dialog />
       <BrowserRouter>
         <Header />

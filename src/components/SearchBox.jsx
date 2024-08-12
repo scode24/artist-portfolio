@@ -26,32 +26,6 @@ const SearchBox = (props) => {
     setSearchValue(e.target.value);
   };
 
-  const searchArtworks = (artworks, searchValue) => {
-    searchValue = searchValue.toLowerCase();
-
-    return artworks.filter((artwork) => {
-      return (
-        (artwork.title && artwork.title.toLowerCase().includes(searchValue)) ||
-        (artwork.artist &&
-          artwork.artist.toLowerCase().includes(searchValue)) ||
-        (artwork.category &&
-          artwork.category.toLowerCase().includes(searchValue)) ||
-        (artwork.about && artwork.about.toLowerCase().includes(searchValue)) ||
-        (artwork.artDescription &&
-          artwork.artDescription.materialUsed &&
-          artwork.artDescription.materialUsed
-            .toLowerCase()
-            .includes(searchValue)) ||
-        (artwork.artDescription &&
-          artwork.artDescription.paperType &&
-          artwork.artDescription.paperType
-            .toLowerCase()
-            .includes(searchValue)) ||
-        (artwork.layout && artwork.layout.toLowerCase().includes(searchValue))
-      );
-    });
-  };
-
   return open ? (
     <div
       className="flex flex-col cursor-pointer"
