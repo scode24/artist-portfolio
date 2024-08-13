@@ -87,9 +87,7 @@ const PhotoContainer = (props) => {
 
   return (
     <div
-      className={
-        "relative cursor-pointer m-2 bg-gray-200 shadow-xl " + getWidth()
-      }
+      className={"relative rounded-xl cursor-pointer m-2 glass " + getWidth()}
       onClick={() => handleOnClick()}
     >
       <img

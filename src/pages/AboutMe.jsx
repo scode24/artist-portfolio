@@ -19,21 +19,25 @@ const AboutMe = () => {
 
   return artistInfo ? (
     <div className="flex flex-col justify-center items-center h-[90vh] p-5">
-      <img
-        className="rounded-full w-[100px] h-[100px] md:w-[120px] md:h-[120px] bg-gray-200"
-        src={artistInfo.photo}
-      />
-      <span className="text-3xl font-medium mt-5">{artistInfo.name}</span>
+      <div className="flex flex-col rounded-2xl justify-center glass p-10 md:w-[70%]">
+        <img
+          className="rounded-full w-[100px] h-[100px] mx-auto md:w-[120px] md:h-[120px] bg-gray-200"
+          src={artistInfo.photo}
+        />
+        <span className="text-3xl font-medium mt-5 mx-auto">
+          {artistInfo.name}
+        </span>
 
-      <div className="overflow-auto">
-        <div className="mt-7 md:mx-[10%] lg:mx-[20%]">
-          {artistInfo.about}
+        <div className="h-80 overflow-auto">
+          <div className="mt-7">
+            {artistInfo.about}
 
-          <div className="flex flex-col mt-5">
-            <span>Awards and recognitions -</span>
-            {artistInfo.awards.map((award, index) => (
-              <span key={index}>{award}</span>
-            ))}
+            <div className="flex flex-col mt-5">
+              <span>Awards and recognitions -</span>
+              {artistInfo.awards.map((award, index) => (
+                <span key={index}>{award}</span>
+              ))}
+            </div>
           </div>
         </div>
       </div>

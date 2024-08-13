@@ -28,13 +28,9 @@ const PhotoInfoBox = (props) => {
   return (
     <div className="flex flex-row justify-center items-center">
       <div className="flex flex-col w-fit m-5 md:flex-row md:m-0">
-        <div
-          className={
-            "rounded-xl border bg-white shadow-2xl mr-10 w-fit " + getWidth()
-          }
-        >
+        <div className={"rounded-l-xl glass w-fit " + getWidth()}>
           <img
-            className={"rounded-xl"}
+            className={"rounded-xl p-3"}
             src={artwork.photoPath[0]}
             alt="user_pic"
           />

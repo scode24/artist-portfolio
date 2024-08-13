@@ -11,7 +11,7 @@ const Home = () => {
     <div className="flex flex-row justify-start h-[90vh] p-3 md:justify-center">
       <div className="flex flex-col w-fit md:text-center mt-10">
         <span className="text-6xl font-medium">Sayantani Dey</span>
-        <span className="mt-3 text-2xl font-thin">
+        <span className="mt-3 text-2xl font-light">
           Artist with a passion for classical art forms
         </span>
 
@@ -20,6 +20,7 @@ const Home = () => {
             config={{
               title: "Browse Work",
               rightIcon: <MoveRight strokeWidth={2} />,
+              isHighlighted: true,
               onClickFn: () => {
                 navigator("/artwork/all");
               },

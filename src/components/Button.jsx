@@ -1,10 +1,18 @@
 import React from "react";
 
 const Button = (props) => {
-  const { title, rightIcon, leftIcon, onClickFn } = props.config;
+  const { title, rightIcon, leftIcon, isHighlighted, onClickFn } = props.config;
+
+  const getStyle = () => {
+    if (isHighlighted) return "text-2xl ";
+  };
+
   return (
     <div
-      className="flex flex-row text-2xl text-indigo-500 cursor-pointer hover:text-green-700"
+      className={
+        "flex flex-row p-2 mr-3 rounded-full ring-1 ring-black/10 cursor-pointer hover:text-indigo-700 " +
+        getStyle()
+      }
       onClick={() => onClickFn()}
     >
       {leftIcon && (
