@@ -1,4 +1,12 @@
-import { Brush, Contact, Home, Menu, Palette, UserPen } from "lucide-react";
+import {
+  Brush,
+  Contact,
+  Home,
+  Menu,
+  Palette,
+  User,
+  UserPen,
+} from "lucide-react";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useMenuOpenCloseStore } from "../stores/MenuStore";
@@ -59,6 +67,11 @@ const Header = () => {
                   title: "Contact Me",
                   redirectUrl: "/contactme",
                 },
+                {
+                  icon: <User strokeWidth={2} />,
+                  title: "login-logout",
+                  redirectUrl: "/contactme",
+                },
               ]}
             />
           ) : null}
@@ -86,6 +99,11 @@ const Header = () => {
             {
               icon: <Contact strokeWidth={2} />,
               title: "Contact Me",
+              redirectUrl: "/contactme",
+            },
+            {
+              icon: <User strokeWidth={2} />,
+              title: "login-logout",
               redirectUrl: "/contactme",
             },
           ]}

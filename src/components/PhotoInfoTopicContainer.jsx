@@ -1,10 +1,12 @@
 import { Brush, Info, Link, MessageCircle, Paintbrush } from "lucide-react";
 import React, { useState } from "react";
 import Button from "./Button";
+import FeedbackContainer from "./FeedbackContainer";
 import PhotoInfoTopic from "./PhotoInfoTopic";
 
 const PhotoInfoTopicContainer = (props) => {
   const artwork = props.artwork;
+  const [optionSelected, setOptionSelected] = useState("information");
   const [topicList, setTopicList] = useState([
     {
       title: artwork.title,
@@ -30,14 +32,14 @@ const PhotoInfoTopicContainer = (props) => {
   ]);
 
   return (
-    <div className="p-5 rounded-r-xl glass md:m-0">
+    <div className="p-5 rounded-r-xl glass h-[100%] md:m-0">
       <div className="flex flex-row">
         <Button
           config={{
             title: "Information",
             leftIcon: <Info strokeWidth={2} />,
             onClickFn: () => {
-              navigator("/artwork/all");
+              setOptionSelected("information");
             },
           }}
         />
@@ -47,16 +49,22 @@ const PhotoInfoTopicContainer = (props) => {
             title: "Feedback",
             leftIcon: <MessageCircle strokeWidth={2} />,
             onClickFn: () => {
-              navigator("/artwork/all");
+              setOptionSelected("feedback");
             },
           }}
         />
       </div>
-      <div className="flex flex-col mt-5">
-        {topicList.map((item, index) => (
-          <PhotoInfoTopic key={index} data={item} />
+
+      {optionSelected === "information" &&
+        topicList.map((topic, index) => (
+          <div className="flex flex-col mt-5">
+            <PhotoInfoTopic key={index} data={topic} />
+          </div>
         ))}
-      </div>
+
+      {optionSelected === "feedback" && (
+        <FeedbackContainer data={artwork._id} />
+      )}
     </div>
   );
 };

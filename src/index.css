@@ -4,6 +4,13 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  background: url("../public/images/bg2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 .font-style {
   font-family: "Outfit", sans-serif;
   font-optical-sizing: auto;
@@ -11,10 +18,10 @@
   font-style: normal;
 }
 
-.round-corner {
-  border-radius: 10px;
-}
-
 .glass {
   @apply backdrop-blur-lg bg-opacity-30 shadow-2xl ring-1 ring-black/10;
+}
+
+.low-glass {
+  @apply backdrop-blur-lg bg-opacity-30 shadow-md border-b-gray-200 ring-1 ring-black/10;
 }

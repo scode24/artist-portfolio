@@ -33,7 +33,7 @@ const PhotoContainer = (props) => {
     let widthClass;
 
     if (fromPage === "home") {
-      widthClass = layout === "landscape" ? "w-[70rem]" : "w-[100%]";
+      widthClass = layout === "landscape" ? "w-[70rem]" : "w-[20rem]";
     } else {
       switch (layout) {
         case "landscape":

@@ -4,13 +4,13 @@ const Button = (props) => {
   const { title, rightIcon, leftIcon, isHighlighted, onClickFn } = props.config;
 
   const getStyle = () => {
-    if (isHighlighted) return "text-2xl ";
+    if (isHighlighted) return "text-2xl ring-0";
   };
 
   return (
     <div
       className={
-        "flex flex-row p-2 mr-3 rounded-full ring-1 ring-black/10 cursor-pointer hover:text-indigo-700 " +
+        "flex flex-row px-3 py-2 mr-3 rounded-full ring-1 ring-black/10 cursor-pointer hover:text-indigo-700 " +
         getStyle()
       }
       onClick={() => onClickFn()}

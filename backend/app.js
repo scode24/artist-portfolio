@@ -15,6 +15,11 @@ app.use(express.json());
 // Routes
 app.use("/api", router);
 
+// Error Handling
+app.use((err, req, res, next) => {
+  res.status(500).send({ message: err.message });
+});
+
 // Connection
 const PORT = process.env.PORT || 5000;
 const DBURL = process.env.MONGO_DB_URL;

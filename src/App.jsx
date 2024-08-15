@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import ArtWorkContainer from "./components/ArtWorkContainer";
@@ -13,29 +12,8 @@ import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 
 function App() {
-  const images = [
-    "../public/images/bg1.jpg",
-    "../public/images/bg2.jpg",
-    "../public/images/bg3.jpg",
-    "../public/images/bg4.jpg",
-    "../public/images/bg5.jpg",
-  ];
-
-  useEffect(() => {
-    const randomImage = images[Math.floor(Math.random() * images.length)];
-
-    document.body.style.backgroundImage = `url(${randomImage})`;
-    document.body.style.backgroundRepeat = "no-repeat";
-    document.body.style.backgroundAttachment = "fixed";
-    document.body.style.backgroundSize = "100% 100%";
-
-    return () => {
-      document.body.style.backgroundImage = "";
-    };
-  }, []);
-
   return (
-    <div className="font-style text-sm md:text-[1rem]">
+    <div className="font-style text-sm bg-cover bg-repeat-y md:text-[1rem]">
       <Dialog />
       <BrowserRouter>
         <Header />

@@ -42,7 +42,9 @@ const PhotoInfoBox = (props) => {
             />
           )}
         </div>
-        <PhotoInfoTopicContainer artwork={artwork} />
+        <div className="h-[inherit] md:w-[450px]">
+          <PhotoInfoTopicContainer artwork={artwork} />
+        </div>
       </div>
     </div>
   );
