@@ -18,7 +18,7 @@ const AboutMe = () => {
 
   return artistInfo ? (
     <div className="flex flex-row justify-center h-[100vh] p-5">
-      <div className="flex flex-col rounded-xl justify-center glass p-5 h-fit mt-5 md:p-7 md:w-[70%] md:mt-20 lg:w-[60%]">
+      <div className="flex flex-col rounded-md justify-center glass p-5 h-fit mt-5 md:p-7 md:w-[70%] md:mt-20 lg:w-[60%]">
         <img
           className="rounded-full w-[100px] h-[100px] mx-auto md:w-[120px] md:h-[120px] bg-gray-200"
           src={artistInfo.photo}

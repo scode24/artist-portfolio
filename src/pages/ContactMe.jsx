@@ -9,7 +9,7 @@ const ContactMe = () => {
 
   return (
     <div className="flex flex-col justify-center items-center h-[100vh] overflow-y-auto">
-      <div className="flex flex-col rounded-xl glass w-[90%] md:flex-row md:min-w-max md:w-[30%]">
+      <div className="flex flex-col rounded-md glass w-[90%] md:flex-row md:min-w-max md:w-[30%]">
         <div className="text-wrap p-5 md::w-1/2">
           <div className="flex flex-col">
             <span className="font-medium">

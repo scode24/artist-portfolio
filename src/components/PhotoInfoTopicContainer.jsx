@@ -32,7 +32,7 @@ const PhotoInfoTopicContainer = (props) => {
   ]);
 
   return (
-    <div className="p-3 rounded-xl glass h-[100%] md:m-0 md:rounded-r-xl md:rounded-l-none">
+    <div className="p-3 rounded-md glass h-[100%] md:m-0 md:rounded-l-none">
       <div className="flex flex-row">
         <Button
           config={{
