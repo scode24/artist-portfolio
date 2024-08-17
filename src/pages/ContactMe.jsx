@@ -16,7 +16,7 @@ const ContactMe = () => {
         <div className="text-wrap p-5 md::w-1/2">
           <div className="flex flex-col">
             <span className="font-medium">
-              Feel free to reach out to me at:
+              Feel free to reach out to me at :
             </span>
 
             <div
@@ -33,7 +33,9 @@ const ContactMe = () => {
               </div>
             </div>
 
-            <span className="mt-5 font-medium">Follow me and my page at:</span>
+            <span className="mt-5 font-medium">
+              Follow my pages / profiles :
+            </span>
 
             <div
               className="flex flex-row mt-3 cursor-pointer"
@@ -63,7 +65,7 @@ const ContactMe = () => {
               </div>
             </div>
 
-            <span className="mt-5 font-medium">Address:</span>
+            <span className="mt-5 font-medium">Address :</span>
 
             <div
               className="flex flex-row mt-3"
