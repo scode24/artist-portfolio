@@ -19,7 +19,7 @@ function ArtWorkContainer() {
   }, [param, data]);
 
   return filteredPhotoList !== undefined && filteredPhotoList.length > 0 ? (
-    <div className="flex flex-wrap p-5 overflow-auto h-[100vh] md:mx-[10%]">
+    <div className="flex flex-wrap p-5 overflow-y-autoauto h-[100vh] md:mx-[10%]">
       {filteredPhotoList.map((artworkData, index) => (
         <PhotoContainer
           key={index}

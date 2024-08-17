@@ -32,7 +32,7 @@ const PhotoInfoTopicContainer = (props) => {
   ]);
 
   return (
-    <div className="p-5 rounded-r-xl glass h-[100%] md:m-0">
+    <div className="p-3 rounded-xl glass h-[100%] md:m-0 md:rounded-r-xl md:rounded-l-none">
       <div className="flex flex-row">
         <Button
           config={{
@@ -57,7 +57,7 @@ const PhotoInfoTopicContainer = (props) => {
 
       {optionSelected === "information" &&
         topicList.map((topic, index) => (
-          <div className="flex flex-col mt-5">
+          <div className="flex flex-col mt-5 mx-2">
             <PhotoInfoTopic key={index} data={topic} />
           </div>
         ))}

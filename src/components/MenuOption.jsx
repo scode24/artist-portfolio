@@ -31,7 +31,11 @@ const MenuOption = (props) => {
             className="rounded-md p-2 mr-3 mt-3 bg-indigo-700 text-white cursor-pointer w-full"
             type="button"
             value="Logout"
-            onClick={() => setLoggedInUser(undefined)}
+            onClick={() => {
+              setLoggedInUser(undefined);
+              sessionStorage.removeItem("token");
+              push(undefined);
+            }}
           />
         </div>
       );

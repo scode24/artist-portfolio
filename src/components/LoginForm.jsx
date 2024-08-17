@@ -1,13 +1,36 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
 import useDialogStore from "../stores/DialogStore";
+import useUserAuthStore from "../stores/UserAuthStore";
 import RegisterForm from "./RegisterForm";
 
 const LoginForm = () => {
+  const [loginForm, setLoginForm] = useState({
+    email: "",
+    password: "",
+  });
   const { push } = useDialogStore();
+  const { loggedInUser, setLoggedInUser } = useUserAuthStore();
 
-  const handleOnSubmit = (e) => {
+  const handleOnSubmit = async (e) => {
     e.preventDefault();
-    console.log(e.target.elements);
+    try {
+      const response = await axios.post(
+        import.meta.env.VITE_API_ENDPOINT + "/loginUser",
+        loginForm
+      );
+      sessionStorage.setItem("token", response.data.jwtToken);
+      setLoggedInUser(response.data.loggedInUser);
+      push(response.data.message);
+    } catch (err) {
+      push(err?.response?.data?.message);
+      return;
+    }
+  };
+
+  const handleInputChange = (e) => {
+    loginForm[e.target.name] = e.target.value;
+    setLoginForm({ ...loginForm });
   };
 
   const onRegister = () => {
@@ -21,15 +44,19 @@ const LoginForm = () => {
     >
       <input
         className="rounded-md border mb-3 p-2 shadow-inner border-zinc-300 "
+        name="email"
         type="email"
         placeholder="Enter email"
         required
+        onChange={handleInputChange}
       />
       <input
         className="rounded-md border mb-3 p-2 shadow-inner border-zinc-300 "
+        name="password"
         type="password"
         placeholder="Enter password"
         required
+        onChange={handleInputChange}
       />
 
       <div className="flex flex-col mt-2">
