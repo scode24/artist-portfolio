@@ -41,7 +41,7 @@ function ArtWorkSearchContainer() {
   };
 
   return filteredPhotoList !== undefined && filteredPhotoList.length > 0 ? (
-    <div>
+    <div className="h-[-webkit-fill-available]">
       <div className="m-5">Search term : {param.get("value")}</div>
       <div className="flex flex-wrap p-5 md:mx-[10%]">
         {filteredPhotoList.map((artworkData, index) => (

@@ -14,6 +14,7 @@ const artistSchema = new mongoose.Schema({
       link: { type: String, required: true },
     },
   ],
+  address: { type: String, required: true },
 });
 
 const ArtistInfoModel = mongoose.model(

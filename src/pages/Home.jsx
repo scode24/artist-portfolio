@@ -1,15 +1,30 @@
+import axios from "axios";
 import { MoveRight } from "lucide-react";
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "../components/Button";
 import PhotoContainer from "../components/PhotoContainer";
+import useArtistInfoStore from "../stores/ArtistInfoStore";
 
 const Home = () => {
+  const { artistInfo, addArtistInfo } = useArtistInfoStore();
   const navigator = useNavigate();
 
+  useEffect(() => {
+    const fetchData = async () => {
+      if (artistInfo != undefined) return;
+
+      const response = await axios.get(
+        import.meta.env.VITE_API_ENDPOINT + "/getArtistInfo"
+      );
+      addArtistInfo(response.data);
+    };
+    fetchData();
+  }, []);
+
   return (
-    <div className="flex flex-row justify-start h-[90vh] p-3 md:justify-center">
-      <div className="flex flex-col w-fit md:text-center mt-10">
+    <div className="flex flex-row justify-start h-[90vh] p-3 overflow-y-auto md:justify-center">
+      <div className="flex flex-col w-fit ml-3 md:text-center mt-10">
         <span className="text-6xl font-medium">Sayantani Dey</span>
         <span className="mt-3 text-2xl font-light">
           Artist with a passion for classical art forms

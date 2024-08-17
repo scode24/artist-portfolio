@@ -1,21 +1,20 @@
-import axios from "axios";
-import React, { useEffect } from "react";
+import React from "react";
 import useArtistInfoStore from "../stores/ArtistInfoStore";
 
 const AboutMe = () => {
-  const { artistInfo, addArtistInfo } = useArtistInfoStore();
+  const { artistInfo } = useArtistInfoStore();
 
-  useEffect(() => {
-    const fetchData = async () => {
-      if (artistInfo != undefined) return;
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     if (artistInfo != undefined) return;
 
-      const response = await axios.get(
-        import.meta.env.VITE_API_ENDPOINT + "/getArtistInfo"
-      );
-      addArtistInfo(response.data);
-    };
-    fetchData();
-  }, []);
+  //     const response = await axios.get(
+  //       import.meta.env.VITE_API_ENDPOINT + "/getArtistInfo"
+  //     );
+  //     addArtistInfo(response.data);
+  //   };
+  //   fetchData();
+  // }, []);
 
   return artistInfo ? (
     <div className="flex flex-row justify-center h-[100vh] p-5">

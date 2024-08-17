@@ -67,7 +67,7 @@ const FeedbackContainer = (props) => {
 
       <div className="flex flex-row rounded-md border p-1 bg-white border-zinc-300 shadow-inner w-full">
         <textarea
-          className="m-2 w-full"
+          className="p-2 w-full"
           name="feedback"
           rows={3}
           type="text"
