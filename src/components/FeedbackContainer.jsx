@@ -58,7 +58,7 @@ const FeedbackContainer = (props) => {
   };
 
   return (
-    <div className="flex flex-col justify-between h-[95%] md:p-3">
+    <div className="flex flex-col justify-between h-[95%] md:py-3">
       <div className="flex flex-col rounded-md shadow-inner h-[300px] overflow-auto md:h-[425px]">
         {feedbackList.map((feedback, index) => (
           <ChatBubble key={index} data={feedback} />

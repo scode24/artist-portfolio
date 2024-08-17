@@ -15,7 +15,10 @@ const PhotoInfoBoxContainer = () => {
 
   return (
     selectedArtWork && (
-      <div className="h-[100vh] overflow-y-auto  md:m-10">
+      <div
+        className="overflow-y-auto md:m-10"
+        style={{ height: "calc(100vh - 132px)" }}
+      >
         <PhotoInfoBox
           artwork={selectedArtWork}
           config={{

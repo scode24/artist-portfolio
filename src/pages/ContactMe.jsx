@@ -8,7 +8,10 @@ const ContactMe = () => {
   const { loggedInUser } = useUserAuthStore();
 
   return (
-    <div className="flex flex-col justify-center items-center h-[100vh] overflow-y-auto">
+    <div
+      className="flex flex-col justify-center items-center h-screen-minus-title-header overflow-y-auto"
+      style={{ height: "calc(100vh - 65px)" }}
+    >
       <div className="flex flex-col rounded-md glass w-[90%] md:flex-row md:min-w-max md:w-[30%]">
         <div className="text-wrap p-5 md::w-1/2">
           <div className="flex flex-col">

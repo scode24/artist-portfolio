@@ -23,7 +23,10 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="flex flex-row justify-start h-[90vh] p-3 overflow-y-auto md:justify-center">
+    <div
+      className="flex flex-row justify-start p-3 overflow-y-auto md:justify-center"
+      style={{ height: "calc(100vh - 65px)" }}
+    >
       <div className="flex flex-col w-fit ml-3 md:text-center mt-10">
         <span className="text-6xl font-medium">Sayantani Dey</span>
         <span className="mt-3 text-2xl font-light">
